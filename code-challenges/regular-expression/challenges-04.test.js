@@ -62,7 +62,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-  let regex = /\boct\b|\bOctober\b|\bOct\b|\boctober\b/g;
+  let regex = /\boct\b|\boctober\b|\bOctober\b|\bOct\b/g;
   return regex.test(input);
 };
 
@@ -96,7 +96,7 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
-  let regex = /[aeiou]|[AEIOU]/g;
+  let regex = /[aeiou]/ig;
   return str.replace(regex, '_');
 };
 
