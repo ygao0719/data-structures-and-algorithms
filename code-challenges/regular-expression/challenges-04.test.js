@@ -44,8 +44,8 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let regex = /[A-J]\w+/g;
-  return arr.toString().match(regex);
+  let regex = /^[A-J]/g;
+  return arr.filter(idx => idx.match(regex));
 };
 
 /* ------------------------------------------------------------------------------------------------
