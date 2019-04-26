@@ -62,7 +62,7 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-  let regex = /\boct\b|\boctober\b|\bOctober\b|\bOct\b/g;
+  let regex = /^[Oo]ct(ober)?$/;
   return regex.test(input);
 };
 
