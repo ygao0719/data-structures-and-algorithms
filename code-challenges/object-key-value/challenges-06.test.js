@@ -113,6 +113,15 @@ The input and output of this function are the same as the input and output from 
 
 const hasChildrenEntries = (arr, character) => {
   // Solution code here...
+  for(let i = 0 ; i < arr.length;i++){
+    if (character === arr[i].name){
+      if ( Object.entries(arr[i])[2][1].length > 0){
+        return true;
+      }else{
+        return false;
+      }
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -123,6 +132,19 @@ Write a function named totalCharacters that takes in an array and returns the nu
 
 const totalCharacters = (arr) => {
   // Solution code here...
+  let count = 0;
+  for (let i = 0;i < arr.length;i ++){
+    if (arr[i].name !== null){
+      count ++;
+    }
+    if (arr[i].spouse !== null){
+      count ++;
+    }
+    if (arr[i].children.length > 0){
+      count = count + arr[i].children.length;
+    }
+  }
+  return count;
 };
 
 /* ------------------------------------------------------------------------------------------------
