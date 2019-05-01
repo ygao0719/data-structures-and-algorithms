@@ -12,12 +12,6 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  let arr2 = [];
-  for (let i = 0; i < arr.length; i ++){
-    arr2.push(Math.pow(2,arr[i]));
-  }
-  return arr2;
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -27,12 +21,6 @@ Write a function named forEachTwoToThe that produces the same output as your for
 
 const forEachTwoToThe = (arr) => {
   // Solution code here...
-  let arr2 = [];
-  arr.forEach(value =>{
-    arr2.push(Math.pow(2,value));
-  });
-  return arr2;
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,8 +30,6 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  let arr2 = arr.map(value => Math.pow(2,value));
-  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,10 +44,6 @@ For example: charCode(['h','i']) returns [104, 105].
 
 const charCode = (arr) => {
   // Solution code here...
-  let arr2 = arr.map((value,index)=>{
-    return value.charCodeAt(0);
-  });
-  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,16 +58,6 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 
 const evenOdd = (arr) => {
   // Solution code here...
-  let arr2 = arr.map(value =>{
-    if (value % 2 === 0 ){
-      return 'even';
-    }else if (value % 2 === 1){
-      return 'odd';
-    }else {
-      return 'N/A';
-    }
-  });
-  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,10 +104,6 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
-  let arr2 = arr.map(value =>{
-    return value.ability.name;
-  });
-  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -183,10 +151,6 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
-  let arr2 = arr.map(value =>{
-    return {name:value.stat.name, total:value.effort+value.baseStat};
-  });
-  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
