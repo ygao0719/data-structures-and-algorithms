@@ -10,9 +10,11 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  let odd = arr.filter();
+  let odd = arr.filter( value =>{
+    return value%2;
+  });
+  return odd;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -26,6 +28,10 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
+  let vowels = arr.filter(value => {
+    return value.includes('a')||value.includes('e')||value.includes('i')||value.includes('o')||value.includes('u');
+  });
+  return vowels;
 };
 
 
@@ -39,6 +45,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let arr2 = arr.filter(value =>{
+    return !forbiddenValues.includes(value);
+  });
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,6 +92,10 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  let arr2 = arr.filter(value => {
+    return value.baseStat > minBaseStat;
+  });
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +108,13 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  let arr2 = arr.filter(value => {
+    return value.baseStat > minBaseStat;
+  });
+  let arr3 = arr2.map(value => {
+    return value.stat.name;
+  });
+  return arr3;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -147,6 +168,10 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  let arr2 = arr.filter( value => {
+    return !value.hasOwnProperty('children');
+  });
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
