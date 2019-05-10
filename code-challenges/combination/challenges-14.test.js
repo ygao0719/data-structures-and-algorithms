@@ -87,6 +87,9 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let arr2 = arr.filter(obj => obj.mass > 77);
+  let arr3 = arr2.map( obj => obj.name);
+  return arr3.join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,6 +108,12 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  if (property === 'price'){
+    return arr.sort((a,b) => (a.price > b. price) ? 1 : -1);
+  }else if (property === 'name'){
+    return arr.sort((a,b) => (a.name > b.name) ? 1 : -1);
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,6 +130,8 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
 // Solution code here...
+  let regex = /https:\/\/\w+.\w+/g;
+  return regex.test(url);
 };
 
 /* ------------------------------------------------------------------------------------------------
