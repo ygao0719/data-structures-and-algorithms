@@ -8,9 +8,9 @@ public class ArrayShift {
         int[] newArr = new int[inputArr.length + 1];
 
         for (int i = 0; i < newArr.length;i ++){
-            if (i < Math.ceil(inputArr.length/2)){
+            if (i < Math.ceil(newArr.length/2)){
                 newArr[i] = inputArr[i];
-            }else if (i == Math.ceil(inputArr.length/2)){
+            }else if (i == Math.ceil(newArr.length/2)){
                 newArr[i] = num;
             }else {
                 newArr[i] = inputArr[i-1];
