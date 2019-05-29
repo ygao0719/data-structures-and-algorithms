@@ -1,6 +1,7 @@
+package codechallenges;
+
 import java.util.Arrays;
 
-package code.challenges;
 
 public class ArrayShift {
     public int[] insertShiftArray(int[] inputArr, int num) {
