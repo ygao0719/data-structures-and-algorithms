@@ -13,3 +13,4 @@ this process. If the while loop ends the you still haven't foudn the key in the 
 ## Solution
 <!-- Embedded whiteboard image -->
 ![White Board to insert shift array problem](../assets/array_binary_search.jpg)
+[Code](../src/main/java/codechallenges/BinarySearch.java)

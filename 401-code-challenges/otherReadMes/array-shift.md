@@ -11,5 +11,5 @@ equal to, or greater than the length of the array divided by 2.Assing a new valu
 that new array.
 ## Solution
 <!-- Embedded whiteboard image -->
-[Code](../src/main/java/code/challenges/ArrayShift.java)
+[Code](../src/main/java/codechallenges/ArrayShift.java)
 ![White Board to insert shift array problem](../assets/array_shift.JPG)
