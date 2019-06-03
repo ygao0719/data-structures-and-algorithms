@@ -15,4 +15,4 @@ Define a method called print which takes in no arguments and returns a collectio
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 insert, includes, print
-[code](./src/main/java/Data.linkedList/LinkedList)
+[code](./src/main/java/Data/linkedList/LinkedList)
