@@ -3,6 +3,7 @@ package Data.linkedList;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
@@ -50,4 +51,17 @@ public class LinkedListTest {
 
         assertEquals(expect,instanceForTest.print());
     }
-}
+
+    @Test
+    public void testAppend() {
+        LinkedList instanceForTest = new LinkedList();
+        instanceForTest.insert(2);
+        instanceForTest.insert(3);
+        instanceForTest.insert(4);
+
+        instanceForTest.append(5);
+        ArrayList<Integer> expect = new ArrayList<Integer>(Arrays.asList(4,3,2,5));
+
+        assertEquals(expect,instanceForTest.print());
+    }
+    }

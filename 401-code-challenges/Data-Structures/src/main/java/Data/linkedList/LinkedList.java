@@ -31,7 +31,6 @@ public class LinkedList {
                 return true;
             }else{
                 current = current.next;
-
             }
         }
         return false;
@@ -46,5 +45,22 @@ public class LinkedList {
         }
         return result;
     }
+
+    public void append(int value){
+        Node new_node = new Node(value);
+        //if linked list is empty
+        if (head == null){
+            new_node.next = head;
+            head = new_node;
+        }
+
+        //if linked list is not empty
+        Node last = head;
+        while(last.next != null){
+            last = last.next;
+        }
+        last.next = new_node;
+    }
+
 
 }
