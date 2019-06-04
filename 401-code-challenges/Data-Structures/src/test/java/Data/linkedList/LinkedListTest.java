@@ -52,6 +52,7 @@ public class LinkedListTest {
         assertEquals(expect,instanceForTest.print());
     }
 
+    //test for 4->3->2->null
     @Test
     public void testAppend() {
         LinkedList instanceForTest = new LinkedList();
@@ -63,5 +64,15 @@ public class LinkedListTest {
         ArrayList<Integer> expect = new ArrayList<Integer>(Arrays.asList(4,3,2,5));
 
         assertEquals(expect,instanceForTest.print());
+    }
+    //test for empty linked list
+    @Test
+    public void testAppend_Empty(){
+        LinkedList instanceForTest = new LinkedList();
+        instanceForTest.head = null;
+        instanceForTest.append(5);
+        ArrayList<Integer> expect = new ArrayList<>(Arrays.asList(5));
+        assertEquals(expect, instanceForTest.print());
+
     }
     }

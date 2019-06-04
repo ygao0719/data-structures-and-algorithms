@@ -47,13 +47,14 @@ public class LinkedList {
     }
 
     public void append(int value){
-        Node new_node = new Node(value);
         //if linked list is empty
-        if (head == null){
-            new_node.next = head;
-            head = new_node;
-        }
+        Node new_node = new Node(value);
 
+        if (head == null){
+            head = new Node(value);
+            return;
+        }
+        new_node.next = null;
         //if linked list is not empty
         Node last = head;
         while(last.next != null){
