@@ -19,12 +19,23 @@ public class LinkedListTest {
     public void insert() {
         LinkedList instanceForTest = new LinkedList();
         instanceForTest.insert(3);
-        assertEquals(3,instanceForTest.head.val);
-        instanceForTest.insert(5);
-        assertEquals(5,instanceForTest.head.val);
 
+        assertEquals(3,instanceForTest.head.val);
     }
 
+    @Test()
+    public void insert_Multi() {
+        LinkedList instanceForTest = new LinkedList();
+        instanceForTest.insert(1);
+        instanceForTest.insert(2);
+        instanceForTest.insert(3);
+        instanceForTest.insert(3);
+        instanceForTest.insert(5);
+
+        assertEquals(5,instanceForTest.head.val);
+    }
+
+    //return true when finding a value within the linked list that exists
     @Test
     public void includes() {
         LinkedList instanceForTest = new LinkedList();
@@ -33,6 +44,16 @@ public class LinkedListTest {
         instanceForTest.insert(4);
 
         assertEquals(true,instanceForTest.includes(2));
+    }
+
+    //return false when searching for a value in the linked list that does not exist
+    @Test
+    public void includes_False() {
+        LinkedList instanceForTest = new LinkedList();
+        instanceForTest.insert(2);
+        instanceForTest.insert(3);
+        instanceForTest.insert(4);
+
         assertEquals(false,instanceForTest.includes(1));
 
     }
@@ -89,6 +110,7 @@ public class LinkedListTest {
         instanceForTest.head = null;
         instanceForTest.append(5);
         ArrayList<Integer> expect = new ArrayList<>(Arrays.asList(5));
+
         assertEquals(expect, instanceForTest.print());
 
     }
@@ -102,6 +124,7 @@ public class LinkedListTest {
 
         instanceForTest.insertBefore(3,5);
         ArrayList<Integer> expect = new ArrayList<>(Arrays.asList(1,5,3,2));
+
         assertEquals(expect, instanceForTest.print());
 
     }
@@ -115,6 +138,7 @@ public class LinkedListTest {
 
         instanceForTest.insertBefore(1,5);
         ArrayList<Integer> expect = new ArrayList<>(Arrays.asList(5,1,3,2));
+
         assertEquals(expect, instanceForTest.print());
     }
     //insert after a node in the middle of the linked list
@@ -127,6 +151,7 @@ public class LinkedListTest {
 
         instanceForTest.insertAfter(3,5);
         ArrayList<Integer> expect = new ArrayList<>(Arrays.asList(1,3,5,2));
+
         assertEquals(expect, instanceForTest.print());
     }
 
@@ -140,6 +165,7 @@ public class LinkedListTest {
 
         instanceForTest.insertAfter(2,5);
         ArrayList<Integer> expect = new ArrayList<>(Arrays.asList(1,3,2,5));
+
         assertEquals(expect, instanceForTest.print());
     }
 
