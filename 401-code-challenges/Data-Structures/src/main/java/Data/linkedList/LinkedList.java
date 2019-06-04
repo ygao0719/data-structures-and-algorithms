@@ -82,7 +82,6 @@ public class LinkedList {
                 return;
             }else{
                 current = current.next;
-
             }
         }
     }
@@ -103,7 +102,6 @@ public class LinkedList {
                 return;
             }else{
                 current = current.next;
-
             }
         }
     }
