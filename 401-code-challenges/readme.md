@@ -6,3 +6,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [Day 3: Binary Search](./otherReadMes/array-binary-search.md)
 ## Week 2 
 - [3 Jun: Single linked list](./Data-Structures/README.md)
+- [3 Jun: linked list insertions](./Data-Structures/README.md)
