@@ -63,5 +63,47 @@ public class LinkedList {
         last.next = new_node;
     }
 
+    public void insertBefore(int target,int newValue){
+        Node new_node = new Node(newValue);
+
+        //if linked list is empty
+        if(head == null){
+            System.out.println("The linked list should not be empty");
+            return;
+        }
+        Node current = head;
+        while(current.next != null){
+            if(current.val == target){
+                this.insert(newValue);
+            }
+            if (current.next.val == target){
+                new_node.next = current.next;
+                current.next = new_node;
+                return;
+            }else{
+                current = current.next;
+            }
+        }
+    }
+
+    public void insertAfter(int target,int newValue){
+        Node new_node = new Node(newValue);
+
+        //if linked list is empty
+        if(head == null){
+            this.append(newValue);
+            return;
+        }
+        Node current = head;
+        while(current != null){
+            if (current.val == target){
+                new_node.next = current.next;
+                current.next = new_node;
+                return;
+            }else{
+                current = current.next;
+            }
+        }
+    }
 
 }
