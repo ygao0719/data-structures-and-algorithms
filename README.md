@@ -9,3 +9,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 ### Week 2
 - [3 Jun: Single linked list](./401-code-challenges/Data-Structures/README.md)
 - [3 Jun: linked list insertions](./401-code-challenges/Data-Structures/README.md)
+- [4 Jun: linked list kthFromEnd](./401-code-challenges/Data-Structures/README.md)
