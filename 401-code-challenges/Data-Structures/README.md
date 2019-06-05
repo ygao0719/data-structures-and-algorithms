@@ -26,3 +26,4 @@ insert, includes, print, append, insertBefore, insertAfter, kthFromEnd
 
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
+![White Board to insert shift array kthFromEnd](../assets/)
