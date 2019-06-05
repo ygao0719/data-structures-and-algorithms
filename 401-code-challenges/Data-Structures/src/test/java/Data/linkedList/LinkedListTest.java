@@ -169,5 +169,49 @@ public class LinkedListTest {
         assertEquals(expect, instanceForTest.print());
     }
 
+    //k is greater than the length of linked list
+    @Test(expected = NullPointerException.class)
+    public void test_kthFromEnd_kLarge() {
+        LinkedList instanceForTest = new LinkedList();
+
+        instanceForTest.kthFromEnd(5);
+
+    }
+
+    //k is same with the length of linked list
+    @Test(expected = NullPointerException.class)
+    public void test_kthFromEnd_kSame() {
+        LinkedList instanceForTest = new LinkedList();
+
+        instanceForTest.kthFromEnd(3);
+    }
+    //k is not a positive integer
+    @Test(expected = NullPointerException.class)
+    public void test_kthFromEnd_kNegetive() {
+        LinkedList instanceForTest = new LinkedList();
+
+        instanceForTest.kthFromEnd(-3);
+    }
+    //the linked list is of a size 1
+
+    @Test
+    public void test_kthFromEnd_SizeOne() {
+        LinkedList instanceForTest = new LinkedList();
+        instanceForTest.insert(1);
+        int expect = 1;
+        assertEquals(expect,instanceForTest.kthFromEnd(0));
+    }
+
+    //k is somewhere in the middle of linked list
+    @Test
+    public void test_kthFromEnd_happyPath() {
+        LinkedList instanceForTest = new LinkedList();
+        instanceForTest.insert(3);
+        instanceForTest.insert(2);
+        instanceForTest.insert(1);
+
+        int expect = 2;
+        assertEquals(expect,instanceForTest.kthFromEnd(1));
+    }
 
 }

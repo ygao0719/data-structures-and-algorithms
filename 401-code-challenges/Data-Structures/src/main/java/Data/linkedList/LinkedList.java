@@ -106,4 +106,23 @@ public class LinkedList {
         }
     }
 
+    public int kthFromEnd(int k){
+        int len = 0;
+        Node current = head;
+
+        while(current != null){
+            current = current.next;
+            len++;
+        }
+        //if input is larger than linked list length
+        if(k >= len){
+            throw new NullPointerException();
+        }
+        current = head;
+        for (int i = 1; i < len - k ;i++){
+            current = current.next;
+        }
+        return current.val;
+    }
+
 }
