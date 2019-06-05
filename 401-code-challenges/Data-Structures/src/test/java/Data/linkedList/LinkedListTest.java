@@ -185,6 +185,7 @@ public class LinkedListTest {
 
         instanceForTest.kthFromEnd(3);
     }
+
     //k is not a positive integer
     @Test(expected = NullPointerException.class)
     public void test_kthFromEnd_kNegetive() {
@@ -192,8 +193,8 @@ public class LinkedListTest {
 
         instanceForTest.kthFromEnd(-3);
     }
-    //the linked list is of a size 1
 
+    //the linked list is of a size 1
     @Test
     public void test_kthFromEnd_SizeOne() {
         LinkedList instanceForTest = new LinkedList();
