@@ -125,4 +125,32 @@ public class LinkedList {
         return current.val;
     }
 
+    public LinkedList mergeList(LinkedList one,LinkedList two){
+        if (one == null || two == null){
+            throw new NullPointerException();
+        }
+
+        Node l1 = one.head;
+        Node l2 = two.head;
+
+
+        while (l1.next != null && l2.next != null) {
+            Node current = l2.next;
+
+            l2.next = l1.next;
+            l1.next = l2;
+
+            l1 = l2.next;
+            l2 = current;
+        }
+
+        if (l1.next != null){
+            l1.next = l1;
+        }else {
+            l1.next = l2;
+        }
+
+        return one;
+    }
+
 }

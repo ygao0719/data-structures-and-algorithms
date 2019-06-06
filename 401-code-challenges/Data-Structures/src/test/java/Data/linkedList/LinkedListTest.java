@@ -215,4 +215,54 @@ public class LinkedListTest {
         assertEquals(expect,instanceForTest.kthFromEnd(1));
     }
 
+    //test mergeList happyPath
+    @Test
+    public void test_mergeList(){
+        LinkedList one = new LinkedList();
+        one.append(1);
+        one.append(3);
+        one.append(2);
+
+        LinkedList two = new LinkedList();
+        two.append(5);
+        two.append(9);
+        two.append(4);
+
+        LinkedList list = new LinkedList();
+
+        ArrayList<Integer> expect = new ArrayList<>((Arrays.asList(1,5,3,9,2,4)));
+        assertEquals(expect,list.mergeList(one,two).print());
+
+    }
+
+    // test when both linked list are empty
+    @Test(expected = NullPointerException.class)
+    public void test_mergeList_Empty(){
+        LinkedList one = new LinkedList();
+        LinkedList two = new LinkedList();
+        LinkedList merge = new LinkedList();
+
+        merge.mergeList(one,two);
+    }
+
+    // test when first linked list is shorter than second one
+    @Test
+    public void test_mergeList_firstShort(){
+        LinkedList one = new LinkedList();
+        one.append(1);
+        one.append(3);
+
+        LinkedList two = new LinkedList();
+        two.append(4);
+        two.append(5);
+        two.append(7);
+        two.append(8);
+        two.append(11);
+
+        LinkedList list = new LinkedList();
+        ArrayList<Integer> expect = new ArrayList<>((Arrays.asList(1,4,3,5,7,8,11)));
+        assertEquals(expect,list.mergeList(one,two).print());
+
+    }
+
 }
