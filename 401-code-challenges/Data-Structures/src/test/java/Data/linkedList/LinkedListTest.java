@@ -231,7 +231,7 @@ public class LinkedListTest {
         LinkedList list = new LinkedList();
 
         ArrayList<Integer> expect = new ArrayList<>((Arrays.asList(1,5,3,9,2,4)));
-        assertEquals(expect,list.mergeList(one,two).print());
+        assertEquals(expect,list.mergeLists(one,two).print());
 
     }
 
@@ -242,7 +242,7 @@ public class LinkedListTest {
         LinkedList two = new LinkedList();
         LinkedList merge = new LinkedList();
 
-        merge.mergeList(one,two);
+        merge.mergeLists(one,two);
     }
 
     // test when first linked list is shorter than second one
@@ -261,7 +261,7 @@ public class LinkedListTest {
 
         LinkedList list = new LinkedList();
         ArrayList<Integer> expect = new ArrayList<>((Arrays.asList(1,4,3,5,7,8,11)));
-        assertEquals(expect,list.mergeList(one,two).print());
+        assertEquals(expect,list.mergeLists(one,two).print());
 
     }
 

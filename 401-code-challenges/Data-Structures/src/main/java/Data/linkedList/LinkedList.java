@@ -125,7 +125,7 @@ public class LinkedList {
         return current.val;
     }
 
-    public LinkedList mergeList(LinkedList one,LinkedList two){
+    public LinkedList mergeLists(LinkedList one,LinkedList two){
         if (one == null || two == null){
             throw new NullPointerException();
         }
