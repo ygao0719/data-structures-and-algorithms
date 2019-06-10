@@ -12,14 +12,19 @@ public class Queue {
     }
 
     public void enqueue(int input){
-        Node newNode = new Node(input);
-        rear.next = newNode;
-        rear = newNode;
+        Node oldLast = rear;
+        rear = new Node(input);
+        rear.next = null;
+        if (front == null){
+            front = rear;
+        }else {
+            oldLast.next = rear;
+        }
     }
 
     public int dequeue(){
-        if (front == null){
-            throw new NoSuchElementException("Queue underflow");
+        if (front == null && rear == null){
+            throw new NoSuchElementException("Queue is empty");
         }
 
         Node temp = front;
@@ -30,8 +35,8 @@ public class Queue {
     }
 
     public int peek(){
-        if (front == null){
-            throw new NoSuchElementException("Queue underflow");
+        if (front == null && rear == null){
+            throw new NoSuchElementException("Queue is empty");
         }
 
         return front.val;
