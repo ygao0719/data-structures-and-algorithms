@@ -11,3 +11,6 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [3 Jun: linked list insertions](./401-code-challenges/Data-Structures/README.md)
 - [4 Jun: linked list kthFromEnd](./401-code-challenges/Data-Structures/README.md)
 - [5 Jun: mergeLists](./401-code-challenges/Data-Structures/README.md)
+### Week 3
+- [10 Jun: Stack](./401-code-challenges/Data-Structures/README.md)
+- [10 Jun: Queue](./401-code-challenges/Data-Structures/README.md)
