@@ -16,7 +16,7 @@ public class Stack {
     }
 
     public int pop(){
-        if (top == null) throw new NoSuchElementException("Stack underflow");
+        if (top == null) throw new NoSuchElementException("Stack empty");
 
         Node temp = top;
         top = top.next;
@@ -26,7 +26,7 @@ public class Stack {
     }
 
     public int peek(){
-        if (top == null) throw new NoSuchElementException("Stack underflow");
+        if (top == null) throw new NoSuchElementException("Stack is empty");
         return top.val;
     }
 
