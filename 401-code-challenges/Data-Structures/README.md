@@ -1,4 +1,4 @@
-# Singly Linked List
+# Data Struture
 <!-- Short summary or background information -->
 Some methods for single linked list, stack and queue.
 ## Challenge
