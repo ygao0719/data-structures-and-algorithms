@@ -40,8 +40,8 @@ Some methods for single linked list, stack and queue.
 - insert, includes, print, append, insertBefore, insertAfter, kthFromEnd, mergeLists
 [code](./src/main/java/Data/linkedList/LinkedList.java)
 
-- Stack [code](./src/main/java/stackandqueue/Stack.java)
-- Queue [code](./src/main/java/stackandqueue/Queue.java)
+- Stack [code](./src/main/java/stacksandqueue/Stack.java)
+- Queue [code](./src/main/java/stacksandqueue/Queue.java)
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
 ![White Board to kthFromEnd](../assets/linkedlist_kthFromEnd.jpg)
