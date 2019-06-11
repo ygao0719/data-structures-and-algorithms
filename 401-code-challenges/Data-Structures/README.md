@@ -17,6 +17,7 @@ Some methods for single linked list, stack and queue.
 12. Queue: Define a method called enqueue which takes any value as an argument and adds a new node with that value to the back of the queue with an O(1) Time performance.
 13. Queue: Define a method called dequeue that does not take any argument, removes the node from the front of the queue, and returns the node’s value.
 14. Queue: Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
+15. Queue with stacks:  implement our standard queue, but will internally only utilize 2 Stack objects.
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 1. insert: Big O time is O(1), space is O(1),
@@ -33,7 +34,9 @@ Some methods for single linked list, stack and queue.
 12. Queue.enqueue(): Big O time is O(1), space is O(1).
 13. Queue.dequeue(): Big O time is O(1), space is O(1).
 14. Queue.Peek(): Big O time is O(1), space is O(1).
- 
+15. PseudoQueue.enqueue(): Big O time is O(1), space is O(1). 
+16. PseudoQueue.dequeue(): Big O time is O(n), space is O(1).
+
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -42,8 +45,12 @@ Some methods for single linked list, stack and queue.
 
 - Stack [code](./src/main/java/stacksandqueues/Stack.java)
 - Queue [code](./src/main/java/stacksandqueues/Queue.java)
+- PseudoQueue [code](./src/main/java/queueWithStacks/PseudoQueue.java)
+
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
 ![White Board to kthFromEnd](../assets/linkedlist_kthFromEnd.jpg)
-![White Board to kthFromEnd](../assets/mergeLists.jpg)
+![White Board to mergeList](../assets/mergeLists.jpg)
+![White Board to PsedoQueue](../assets/queueWithStacks.jpg)
+
 
