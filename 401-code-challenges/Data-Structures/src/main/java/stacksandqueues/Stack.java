@@ -2,30 +2,30 @@ package stacksandqueues;
 
 import java.util.NoSuchElementException;
 
-public class Stack {
-    private Node top;
+public class Stack<T> {
+    private Node<T> top;
 
     public Stack(){
         top = null;
     }
 
-    public void push(int input){
-        Node newNode = new Node(input);
+    public void push(T input){
+        Node<T> newNode = new Node<>(input);
         newNode.next = top;
         top = newNode;
     }
 
-    public int pop(){
+    public T pop(){
         if (top == null) throw new NoSuchElementException("Stack empty");
 
-        Node temp = top;
+        Node<T> temp = top;
         top = top.next;
         temp.next = null;
 
         return temp.val;
     }
 
-    public int peek(){
+    public T peek(){
         if (top == null) throw new NoSuchElementException("Stack is empty");
         return top.val;
     }

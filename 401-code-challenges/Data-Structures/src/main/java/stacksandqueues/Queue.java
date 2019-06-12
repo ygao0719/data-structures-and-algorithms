@@ -2,18 +2,18 @@ package stacksandqueues;
 
 import java.util.NoSuchElementException;
 
-public class Queue {
-    private Node front;
-    private Node rear;
+public class Queue<T> {
+    private Node<T> front;
+    private Node<T> rear;
 
     Queue(){
         front = null;
         rear = null;
     }
 
-    public void enqueue(int input){
-        Node oldLast = rear;
-        rear = new Node(input);
+    public void enqueue(T input){
+        Node<T> oldLast = rear;
+        rear = new Node<>(input);
         rear.next = null;
         if (front == null){
             front = rear;
@@ -22,19 +22,19 @@ public class Queue {
         }
     }
 
-    public int dequeue(){
+    public T dequeue(){
         if (front == null && rear == null){
             throw new NoSuchElementException("Queue is empty");
         }
 
-        Node temp = front;
+        Node<T> temp = front;
         front = front.next;
         temp.next = null;
 
         return temp.val;
     }
 
-    public int peek(){
+    public T peek(){
         if (front == null && rear == null){
             throw new NoSuchElementException("Queue is empty");
         }
