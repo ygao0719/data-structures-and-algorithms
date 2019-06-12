@@ -15,3 +15,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [10 Jun: Stack](./401-code-challenges/Data-Structures/README.md)
 - [10 Jun: Queue](./401-code-challenges/Data-Structures/README.md)
 - [10 Jun: queueWithStacks](./401-code-challenges/Data-Structures/README.md)
+- [12 Jun: AnimalShelter](./401-code-challenges/Data-Structures/README.md)
