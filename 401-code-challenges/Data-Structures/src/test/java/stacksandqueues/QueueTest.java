@@ -2,6 +2,8 @@ package stacksandqueues;
 
 import org.junit.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.*;
 
 public class QueueTest {
@@ -39,6 +41,16 @@ public class QueueTest {
         assertEquals(expect, queue.dequeue());
     }
 
+
+    //peek into a queue, seeing the expectd value
+    @Test
+    public void test_peek(){
+        Queue queue = new Queue();
+        queue.enqueue(1);
+        int expect = 1;
+        assertEquals(expect, queue.peek());
+
+    }
     //empty a queue after multiple dequeues
     @Test(expected = NullPointerException.class)
     public void test_empty() {
@@ -51,6 +63,14 @@ public class QueueTest {
         queue.dequeue();
         queue.dequeue();
 
+        queue.peek();
+
+    }
+
+    //test instantiate an empty queue
+    @Test(expected = NoSuchElementException.class)
+    public void test_instantiate(){
+        Queue queue = new Queue();
         queue.peek();
     }
 
