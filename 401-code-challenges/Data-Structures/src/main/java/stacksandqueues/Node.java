@@ -1,9 +1,9 @@
 package stacksandqueues;
 
-public class Node {
-    Node next;
-    int val;
-    Node(int value){
+public class Node<T> {
+    Node<T> next;
+    public T val;
+    Node(T value){
         this.val = value;
         this.next = null;
     }
