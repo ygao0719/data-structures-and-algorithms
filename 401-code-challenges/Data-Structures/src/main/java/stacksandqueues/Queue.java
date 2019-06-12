@@ -3,10 +3,10 @@ package stacksandqueues;
 import java.util.NoSuchElementException;
 
 public class Queue<T> {
-    private Node<T> front;
-    private Node<T> rear;
+    public Node<T> front;
+    public Node<T> rear;
 
-    Queue(){
+    public Queue(){
         front = null;
         rear = null;
     }
