@@ -6,8 +6,8 @@ import stacksandqueues.Queue;
 import java.util.NoSuchElementException;
 
 public class AnimalShelter {
-    public Queue<Dog> dogQ = new Queue<>();
-    public Queue<Cat> catQ = new Queue<>();
+    Queue<Dog> dogQ = new Queue<>();
+    Queue<Cat> catQ = new Queue<>();
 
     public void enqueue(Animal animal){
         if (animal instanceof Cat){
