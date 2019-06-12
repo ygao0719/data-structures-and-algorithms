@@ -11,7 +11,7 @@ public class AnimalShelter {
 
     public void enqueue(Animal animal){
         if (animal instanceof Cat){
-            catQ.enqueue((Cat) animal)
+            catQ.enqueue((Cat) animal);
         }else if (animal instanceof Dog){
             dogQ.enqueue((Dog) animal);
         }else {

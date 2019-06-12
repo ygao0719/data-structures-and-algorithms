@@ -24,7 +24,7 @@ public class StackTest {
         stack.push(2);
         stack.push(3);
         int expect = 3;
-        assertEquals(expect, stack.pop());
+        assertEquals(expect, stack.peek());
     }
 
     //empty a stack after multiple value
