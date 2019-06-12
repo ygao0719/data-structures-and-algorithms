@@ -24,7 +24,16 @@ public class StackTest {
         stack.push(2);
         stack.push(3);
         int expect = 3;
-        assertEquals(expect, stack.pop());
+        assertEquals(expect, stack.peek());
+    }
+
+    //test pop off the stack
+    @Test
+    public void test_popOff(){
+        Stack stack = new Stack();
+        stack.push(1);
+        int expect = 1;
+        assertEquals(expect,stack.pop());
     }
 
     //empty a stack after multiple value
@@ -53,4 +62,10 @@ public class StackTest {
         assertEquals(3, stack.peek());
     }
 
+    //test instantiate an empty stack
+    @Test(expected = NoSuchElementException.class)
+    public void test_instantiate(){
+        Stack stack = new Stack();
+        stack.peek();
+    }
 }
