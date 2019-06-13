@@ -58,5 +58,5 @@ should return a boolean representing whether or not the brackets in the string a
 ![White Board to mergeList](../assets/mergeLists.jpg)
 ![White Board to PsedoQueue](../assets/queueWithStacks.jpg)
 ![White Board to AnimalShelter](../assets/animalShelter.jpg)
-![White Board to multibracketvalidation](../assets/multibrackvalidation.jpg)
+![White Board to multibracketvalidation](../assets/multibracketvalidation.jpg)
 
