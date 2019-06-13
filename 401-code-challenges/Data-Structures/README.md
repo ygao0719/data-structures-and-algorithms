@@ -19,6 +19,8 @@ Some methods for single linked list, stack and queue.
 14. Queue: Define a method called peek that does not take an argument and returns the value of the node located in the front of the queue, without removing it from the queue.
 15. Queue with stacks:  implement our standard queue, but will internally only utilize 2 Stack objects.
 16. fifoAnimalShelter: holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+17. MultiBracketValidation:  take a string as its only argument, and 
+should return a boolean representing whether or not the brackets in the string are balanced.
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 1. insert: Big O time is O(1), space is O(1),
@@ -39,6 +41,7 @@ Some methods for single linked list, stack and queue.
 16. PseudoQueue.dequeue(): Big O time is O(n), space is O(1).
 17. AnimalShelter.enqueue(): Big O time is O(1), space is O(1). 
 18. AnimalShelter.dequeue(): Big O time is O(1), space is O(1). 
+19. multiBracketValidation90: Big O time is O(n), space is O(n).
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - insert, includes, print, append, insertBefore, insertAfter, kthFromEnd, mergeLists
@@ -48,10 +51,12 @@ Some methods for single linked list, stack and queue.
 - Queue [code](./src/main/java/stacksandqueues/Queue.java)
 - PseudoQueue [code](./src/main/java/queueWithStacks/PseudoQueue.java)
 - AnimalShelter [code](./src/main/java/fifoAnimalShelter/AnimalShelter.java)
+- MultiBracketValidation [code](./src/main/java/multibracketvalidation/MultiBracketValidation.java)
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
 ![White Board to kthFromEnd](../assets/linkedlist_kthFromEnd.jpg)
 ![White Board to mergeList](../assets/mergeLists.jpg)
 ![White Board to PsedoQueue](../assets/queueWithStacks.jpg)
 ![White Board to AnimalShelter](../assets/animalShelter.jpg)
+![White Board to multibracketvalidation](../assets/.jpg)
 
