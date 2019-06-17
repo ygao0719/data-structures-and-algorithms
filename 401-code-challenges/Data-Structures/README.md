@@ -37,8 +37,12 @@ should return a boolean representing whether or not the brackets in the string a
 12. Queue.enqueue(): Big O time is O(1), space is O(1).
 13. Queue.dequeue(): Big O time is O(1), space is O(1).
 14. Queue.Peek(): Big O time is O(1), space is O(1).
-15. PseudoQueue.enqueue(): Big O time is O(1), space is O(1). 
-16. PseudoQueue.dequeue(): Big O time is O(n), space is O(1).
+15. PseudoQueue.enqueue(): 
+- Approach: create two stack. push new value into stack 1.
+- Big O time is O(1), space is O(1). 
+16. PseudoQueue.dequeue():
+- Approach: if stack 2 is not empty, then pop stack 2. If stack 2 is empty, pop all elements in stack 1 and push them into stack 2 then pop stack 2.
+- Big O time is O(n), space is O(1).
 17. AnimalShelter.enqueue(): 
 - Approach: created a class that holds two queues one for cat and one 
 for dogs. When I wanted to add a cat, it goes into the queue and dog likewise. The front of the queue should contain the longest animal in the shelter
