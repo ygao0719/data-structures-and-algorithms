@@ -1,6 +1,6 @@
 # Data Struture
 <!-- Short summary or background information -->
-Some methods for single linked list, stack and queue.
+Some methods for single linked list, stack, queue and tree.
 ## Challenge
 <!-- Description of the challenge -->
 1. Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -21,6 +21,14 @@ Some methods for single linked list, stack and queue.
 16. fifoAnimalShelter: holds only dogs and cats. The shelter operates using a first-in, first-out approach.
 17. MultiBracketValidation:  take a string as its only argument, and 
 should return a boolean representing whether or not the brackets in the string are balanced.
+18. Tree: 
+- Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
+- Create a BinaryTree class
+  - Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+- Create a BinarySearchTree class
+  - Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
+  - Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 1. insert: Big O time is O(1), space is O(1),
@@ -54,6 +62,15 @@ for dogs. When I wanted to add a cat, it goes into the queue and dog likewise. T
 - Approach: create a stack to push open brackets into the stack, then 
 if the corresponding closing bracket matches pop the open bracket off the stack. Then check if stack is empty return true otherwise false for unbalanced bracket string.
 - Big O time is O(n), space is O(n).
+20. Binary Tree:
+- Approach: For preOrder print root value first, then use recursive to print left BinaryTree value, at last print right BinaryTree value.
+For inOrder, print root value in second position. For postOrder, print root value in third position.
+- Big O time is O(1), space is O(1). 
+21. Binary Search Tree:
+- Approach: 
+  - ADD() Compare the inserting element with root, if less than root, then recurse for left, else recurse for right. After reaching end,just insert that node at left(if less than current) else right.
+  - Contains() search the root first, traverse the whole tree, if input value exsits return true, else return false.
+- Big O time is O(n), space is O(n).
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - insert, includes, print, append, insertBefore, insertAfter, kthFromEnd, mergeLists
@@ -64,6 +81,8 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - PseudoQueue [code](./src/main/java/queueWithStacks/PseudoQueue.java)
 - AnimalShelter [code](./src/main/java/fifoAnimalShelter/AnimalShelter.java)
 - MultiBracketValidation [code](./src/main/java/multibracketvalidation/MultiBracketValidation.java)
+- Binary Tree: printPreOrder, printInOrder, printPostOrder [code](./src/main/java/tree/BinaryTree.java)
+- Binary search tree: add(), contains() [code](./src/main/java/tree/BinarySearchTree.java)
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
 ![White Board to kthFromEnd](../assets/linkedlist_kthFromEnd.jpg)
