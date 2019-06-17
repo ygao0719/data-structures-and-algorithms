@@ -41,7 +41,9 @@ should return a boolean representing whether or not the brackets in the string a
 16. PseudoQueue.dequeue(): Big O time is O(n), space is O(1).
 17. AnimalShelter.enqueue(): Big O time is O(1), space is O(1). 
 18. AnimalShelter.dequeue(): Big O time is O(1), space is O(1). 
-19. multiBracketValidation90: Big O time is O(n), space is O(n).
+19. MultiBracketValidation90: 
+- Approach: create a stack to push open brackets into the stack, then if the corresponding closing bracket matches pop the open bracket off the stack. Then check if stack is empty return true otherwise false for unbalanced bracket string.
+- Big O time is O(n), space is O(n).
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - insert, includes, print, append, insertBefore, insertAfter, kthFromEnd, mergeLists
