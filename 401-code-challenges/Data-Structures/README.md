@@ -29,6 +29,13 @@ should return a boolean representing whether or not the brackets in the string a
   - Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
   - Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
+19. FizzBuzzTree: takes a tree as an argument.
+- Without utilizing any of the built-in methods available to your language, determine weather or not the value of each node is divisible by 3, 5 or both, and change the value of each of the nodes:
+  - If the value is divisible by 3, replace the value with “Fizz”
+  - If the value is divisible by 5, replace the value with “Buzz”
+  - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 1. insert: Big O time is O(1), space is O(1),
@@ -71,6 +78,11 @@ For inOrder, print root value in second position. For postOrder, print root valu
   - ADD() Compare the inserting element with root, if less than root, then recurse for left, else recurse for right. After reaching end,just insert that node at left(if less than current) else right.
   - Contains() search the root first, traverse the whole tree, if input value exsits return true, else return false.
 - Big O time is O(n), space is O(n).
+
+22. FizzBuzzTree: 
+- Approach: traverse the whole binary tree and see if value is the factor of 15 or 5 or 3.
+- Big O time is O(n), space is O(1).
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - insert, includes, print, append, insertBefore, insertAfter, kthFromEnd, mergeLists
@@ -83,6 +95,7 @@ For inOrder, print root value in second position. For postOrder, print root valu
 - MultiBracketValidation [code](./src/main/java/multibracketvalidation/MultiBracketValidation.java)
 - Binary Tree: printPreOrder, printInOrder, printPostOrder [code](./src/main/java/tree/BinaryTree.java)
 - Binary search tree: add(), contains() [code](./src/main/java/tree/BinarySearchTree.java)
+- FizzBuzzTree [code](./src/main/java/fizzBuzzTree/FizzBuzzTree.java)
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
 ![White Board to kthFromEnd](../assets/linkedlist_kthFromEnd.jpg)
@@ -90,4 +103,6 @@ For inOrder, print root value in second position. For postOrder, print root valu
 ![White Board to PsedoQueue](../assets/queueWithStacks.jpg)
 ![White Board to AnimalShelter](../assets/animalShelter.jpg)
 ![White Board to multibracketvalidation](../assets/multibracketvalidation.jpg)
+![White Board to fizzbuzztree](../assets/fizzbuzztree.jpg)
+
 
