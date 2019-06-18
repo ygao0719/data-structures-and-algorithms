@@ -3,18 +3,19 @@ package tree;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BinaryTree {
-        Node root;
+public class BinaryTree<T> {
+        public Node root;
 
-        BinaryTree(){
+        public BinaryTree(){
             this.root = null;
         }
-        List<Integer> result = new ArrayList<>();
+        List<T> result = new ArrayList<>();
 
-        public List<Integer> printPreOrder(Node node){
-
-
-            result.add(node.val);
+        public List<T> printPreOrder(Node node){
+            if (node == null){
+                return new ArrayList<>();
+            }
+            result.add((T)node.val);
 
             if(node.left != null) {
                 printPreOrder(node.left);
@@ -26,14 +27,14 @@ public class BinaryTree {
 
         }
 
-        public List<Integer> printInOrder(Node node){
+        public List<T> printInOrder(Node node){
 
 
             if (node.left != null) {
                 printInOrder(node.left);
             }
 
-            result.add(node.val);
+            result.add((T)node.val);
 
             if (node.right != null) {
                 printInOrder(node.right);
@@ -41,7 +42,7 @@ public class BinaryTree {
             return result;
         }
 
-        public List<Integer> printPostOrder(Node node){
+        public List<T> printPostOrder(Node node){
             if (node.left != null) {
                 printPostOrder(node.left);
             }
@@ -49,7 +50,7 @@ public class BinaryTree {
                 printPostOrder(node.right);
             }
 
-            result.add(node.val);
+            result.add((T)node.val);
             return result;
         }
 

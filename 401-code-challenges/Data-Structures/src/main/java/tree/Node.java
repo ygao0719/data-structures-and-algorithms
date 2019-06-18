@@ -1,10 +1,10 @@
 package tree;
 
-public class Node {
-        int val;
-        Node left;
-        Node right;
-        public Node(int value){
+public class Node<T> {
+        public T val;
+        public Node left;
+        public Node right;
+        public Node(T value){
             this.val = value;
             left = right = null;
         }
