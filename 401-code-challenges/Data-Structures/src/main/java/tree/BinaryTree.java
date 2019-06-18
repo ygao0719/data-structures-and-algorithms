@@ -6,12 +6,15 @@ import java.util.List;
 public class BinaryTree<T> {
         public Node root;
 
-        BinaryTree(){
+        public BinaryTree(){
             this.root = null;
         }
         List<T> result = new ArrayList<>();
 
         public List<T> printPreOrder(Node node){
+            if (node == null){
+                return new ArrayList<>();
+            }
             result.add((T)node.val);
 
             if(node.left != null) {
