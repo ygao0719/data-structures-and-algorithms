@@ -57,4 +57,43 @@ public class BinaryTreeTest {
         assertEquals(expect,bt.printPostOrder(bt.root));
     }
 
+    // test breath first traversal
+    @Test
+    public void test_breath_first(){
+        BinaryTree bt = new BinaryTree();
+        bt.root = new Node(1);
+        bt.root.left = new Node(2);
+        bt.root.right = new Node(3);
+        bt.root.left.left = new Node(4);
+        bt.root.left.right = new Node(5);
+
+        List<Integer> expect = new ArrayList<>(Arrays.asList(1,2,3,4,5));
+        assertEquals(expect, bt.printBreathFirst(bt));
+
+    }
+
+    //test this tree only has root
+    @Test
+    public void test_breath_first_root(){
+        BinaryTree bt = new BinaryTree();
+        bt.root = new Node(1);
+
+        List<Integer> expect = new ArrayList<>(Arrays.asList(1));
+        assertEquals(expect, bt.printBreathFirst(bt));
+
+    }
+
+    //test string
+    @Test
+    public void test_breath_first_string(){
+        BinaryTree bt = new BinaryTree();
+        bt.root = new Node("This");
+        bt.root.left = new Node("is");
+        bt.root.right = new Node("cool.");
+
+        List<String> expect = new ArrayList<>(Arrays.asList("This","is","cool."));
+        assertEquals(expect, bt.printBreathFirst(bt));
+
+    }
+
 }

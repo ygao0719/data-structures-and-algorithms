@@ -1,7 +1,10 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
+
 
 public class BinaryTree<T> {
         public Node root;
@@ -54,5 +57,23 @@ public class BinaryTree<T> {
             return result;
         }
 
+        public List<T> printBreathFirst(BinaryTree tree){
+            List<T> result = new ArrayList<>();
+            Queue<Node> queue = new LinkedList<>();
+            queue.add(tree.root);
+
+            while (!queue.isEmpty()){
+                Node temp = queue.poll();
+                result.add((T)temp.val);
+
+                if (temp.left != null){
+                    queue.add(temp.left);
+                }
+                if (temp.right != null){
+                    queue.add(temp.right);
+                }
+            }
+            return result;
+        }
 
 }
