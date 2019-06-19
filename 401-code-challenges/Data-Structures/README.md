@@ -76,7 +76,7 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
   - For Breath First traversal: create an empty queue. loop while temp node is not null, add temp value into list and then enqueue temp's chileren, then dequeue the head of queue
 For inOrder, print root value in second position. For postOrder, print root value in third position.
 - For preorder, inorder and postorder Big O time is O(1), space is O(1). 
-- For breath first Big O time is O(n), space is O(n)
+- For breath first Big O time is O(n), space is O(1)
 21. Binary Search Tree:
 - Approach: 
   - ADD() Compare the inserting element with root, if less than root, then recurse for left, else recurse for right. After reaching end,just insert that node at left(if less than current) else right.
