@@ -17,3 +17,8 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [10 Jun: queueWithStacks](./401-code-challenges/Data-Structures/README.md)
 - [11 Jun: AnimalShelter](./401-code-challenges/Data-Structures/README.md)
 - [12 Jun: MultiBracketValidation](./401-code-challenges/Data-Structures/README.md)
+## Week 4
+- [17 Jun: Binary Tree](./401-code-challenges/Data-Structures/README.md)
+- [17 Jun: Fizz Buzz Tree](./401-code-challenges/Data-Structures/README.md)
+- [18 Jun: Breath First Search](./401-code-challenges/Data-Structures/README.md)
+- [19 Jun: Find Maximum Value in Binary Tree](./401-code-challenges/Data-Structures/README.md)
