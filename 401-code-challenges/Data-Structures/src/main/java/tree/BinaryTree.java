@@ -76,4 +76,8 @@ public class BinaryTree<T> {
             return result;
         }
 
+        public int find_maximum_value(BinaryTree tree){
+            
+    }
+
 }
