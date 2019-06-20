@@ -25,7 +25,9 @@ should return a boolean representing whether or not the brackets in the string a
 - Create a Node class that has properties for the value stored in the node, the left child node, and the right child node.
 - Create a BinaryTree class
   - Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
-  - Write a breadth first traversal method which takes a Binary Tree as its unique input. 
+  - Write a breadth first traversal method which takes a Binary Tree as its unique input.
+  - Find_maximum_value: takes binary tree as its only input, return the maximum value stored in the tree.
+ 
 - Create a BinarySearchTree class
   - Define a method named add that accepts a value, and adds a new node with that value in the correct location in the binary search tree.
   - Define a method named contains that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
@@ -35,7 +37,6 @@ should return a boolean representing whether or not the brackets in the string a
   - If the value is divisible by 3, replace the value with “Fizz”
   - If the value is divisible by 5, replace the value with “Buzz”
   - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
-
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -73,10 +74,16 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 20. Binary Tree:
 - Approach: 
   - For preOrder print root value first, then use recursive to print left BinaryTree value, at last print right BinaryTree value.
+  For inOrder, print root value in second position. For postOrder, print root value in third position.
+
   - For Breath First traversal: create an empty queue. loop while temp node is not null, add temp value into list and then enqueue temp's chileren, then dequeue the head of queue
-For inOrder, print root value in second position. For postOrder, print root value in third position.
+  - Find_maximum_value: use recursion to traverse the given tree and for every node return maximum
+  
+  
 - For preorder, inorder and postorder Big O time is O(1), space is O(1). 
 - For breath first Big O time is O(n), space is O(1)
+- For Find_maximum_value: Big O time is O(n), space is O(1)
+
 21. Binary Search Tree:
 - Approach: 
   - ADD() Compare the inserting element with root, if less than root, then recurse for left, else recurse for right. After reaching end,just insert that node at left(if less than current) else right.
@@ -86,6 +93,11 @@ For inOrder, print root value in second position. For postOrder, print root valu
 22. FizzBuzzTree: 
 - Approach: traverse the whole binary tree and see if value is the factor of 15 or 5 or 3.
 - Big O time is O(n), space is O(1).
+
+
+
+
+
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -97,7 +109,7 @@ For inOrder, print root value in second position. For postOrder, print root valu
 - PseudoQueue [code](./src/main/java/queueWithStacks/PseudoQueue.java)
 - AnimalShelter [code](./src/main/java/fifoAnimalShelter/AnimalShelter.java)
 - MultiBracketValidation [code](./src/main/java/multibracketvalidation/MultiBracketValidation.java)
-- Binary Tree: printPreOrder, printInOrder, printPostOrder and printBreathFirst [code](./src/main/java/tree/BinaryTree.java)
+- Binary Tree: printPreOrder, printInOrder, printPostOrder, printBreathFirst, find_maximum_value [code](./src/main/java/tree/BinaryTree.java)
 - Binary search tree: add(), contains() [code](./src/main/java/tree/BinarySearchTree.java)
 - FizzBuzzTree [code](./src/main/java/fizzBuzzTree/FizzBuzzTree.java)
 
@@ -110,5 +122,6 @@ For inOrder, print root value in second position. For postOrder, print root valu
 ![White Board to multibracketvalidation](../assets/multibracketvalidation.jpg)
 ![White Board to fizzbuzztree](../assets/fizzbuzztree.jpg)
 ![White board to breathFirst](../assets/breathfirst.jpg)
+![White board to findMaximumValue](../assets/findMaximumValue.jpg)
 
 
