@@ -77,7 +77,31 @@ public class BinaryTree<T> {
         }
 
         public int find_maximum_value(BinaryTree tree){
-            
-    }
+            if (tree.root == null) {
+                throw new IllegalArgumentException("This binary tree is empty");
+            }else {
+                return findMaxHelper(tree.root);
+            }
+        }
+
+        public int findMaxHelper(Node node){
+            if (node == null){
+                return Integer.MIN_VALUE;
+            }
+
+            int max = (int)node.val;
+            int leftMax = findMaxHelper(node.left);
+            int rightMax = findMaxHelper(node.right);
+
+            if (leftMax > max){
+                max = leftMax;
+            }
+
+            if (rightMax > max){
+                max = rightMax;
+            }
+
+            return max;
+        }
 
 }

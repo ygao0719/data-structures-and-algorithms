@@ -96,4 +96,38 @@ public class BinaryTreeTest {
 
     }
 
+    //test find max in a binary tree
+    @Test(expected = IllegalArgumentException.class)
+    public void test_emptyTree(){
+        BinaryTree bt = new BinaryTree();
+
+        bt.find_maximum_value(bt);
+    }
+
+
+    //test one node binary tree
+    @Test
+    public void test_oneNode(){
+        BinaryTree bt = new BinaryTree();
+        bt.root = new Node(4);
+        int expect = 4;
+        assertEquals(expect,bt.find_maximum_value(bt));
+    }
+
+    //test happy path
+    @Test
+    public void test_normalFindMax(){
+        BinaryTree bt = new BinaryTree();
+        bt.root = new Node(2);
+        bt.root.left = new Node(7);
+        bt.root.right = new Node(5);
+        bt.root.left.right = new Node(6);
+        bt.root.left.right.left = new Node(1);
+        bt.root.left.right.right = new Node(11);
+        bt.root.right.right = new Node(9);
+        bt.root.right.right.left = new Node(4);
+
+        int expect = 11;
+        assertEquals(expect,bt.find_maximum_value(bt));
+    }
 }
