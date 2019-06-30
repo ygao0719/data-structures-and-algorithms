@@ -19,3 +19,5 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [17 Jun: Fizz Buzz Tree](./Data-Structures/README.md)
 - [18 Jun: Breath First Search](./Data-Structures/README.md)
 - [19 Jun: Find Maximum Value in Binary Tree](./Data-Structures/README.md)
+## Week 6
+- [29 Jun: Insertion Sort]()
