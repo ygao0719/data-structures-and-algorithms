@@ -21,3 +21,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [19 Jun: Find Maximum Value in Binary Tree](./Data-Structures/README.md)
 ## Week 6
 - [29 Jun: Insertion Sort](./LECTURE-NOTES-ForInsertionSort.md)
+- [1 July: Merge Sort](./LECTURE-NOTES-ForMergeSort.md)
