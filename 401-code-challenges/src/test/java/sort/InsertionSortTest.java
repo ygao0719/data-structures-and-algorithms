@@ -1,6 +1,7 @@
-package codechallenges;
+package sort;
 
 import org.junit.Test;
+import sort.InsertionSort;
 
 import static org.junit.Assert.*;
 

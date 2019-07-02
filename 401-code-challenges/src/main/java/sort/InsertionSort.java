@@ -1,4 +1,4 @@
-package codechallenges;
+package sort;
 
 public class InsertionSort {
     public void sort(int[] arr){
