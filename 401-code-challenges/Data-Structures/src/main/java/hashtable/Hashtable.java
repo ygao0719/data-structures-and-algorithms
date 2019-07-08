@@ -63,7 +63,6 @@ public class Hashtable {
                 }
                 temp = temp.next;
             }
-
         }
         return false;
     }
