@@ -26,3 +26,7 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 ## Week 5
 - [29 Jun: Insertion Sort](./401-code-challenges/LECTURE-NOTES-ForInsertionSort.md)
 - [1 July: Merge Sort](./401-code-challenges/LECTURE-NOTES-ForMergeSort.md)
+- [2 July: Quick Sort](./401-code-challenges/LECTURE-NOTES-ForQuickSort.md)
+
+## Week 6
+- [8 July: Hashtable](./401-code-challenges/Data-Structures/README.md)
