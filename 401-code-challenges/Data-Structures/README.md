@@ -1,6 +1,7 @@
 # Data Struture
 <!-- Short summary or background information -->
 Some methods for single linked list, stack, queue and tree.
+HashTable
 ## Challenge
 <!-- Description of the challenge -->
 1. Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -37,6 +38,11 @@ should return a boolean representing whether or not the brackets in the string a
   - If the value is divisible by 3, replace the value with “Fizz”
   - If the value is divisible by 5, replace the value with “Buzz”
   - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
+
+20. Hashtable: Implement a Hashtable with the following methods: add, get, contains, hash.
+
+
+
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -94,9 +100,9 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Approach: traverse the whole binary tree and see if value is the factor of 15 or 5 or 3.
 - Big O time is O(n), space is O(1).
 
-
-
-
+23. Hashtable:
+- Approach: hashtable is an array with HashEntry class which has next to deal with collision.
+- Big O time is O(1)
 
 
 ## API
@@ -112,6 +118,7 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Binary Tree: printPreOrder, printInOrder, printPostOrder, printBreathFirst, find_maximum_value [code](./src/main/java/tree/BinaryTree.java)
 - Binary search tree: add(), contains() [code](./src/main/java/tree/BinarySearchTree.java)
 - FizzBuzzTree [code](./src/main/java/fizzBuzzTree/FizzBuzzTree.java)
+- Hashtable [code](./src/main/java/hashtable/Hashtable.java)
 
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
