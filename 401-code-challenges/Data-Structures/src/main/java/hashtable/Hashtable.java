@@ -69,7 +69,13 @@ public class Hashtable {
 
 
     public int hash(String key){
-        return key.hashCode() % INITIAL_SIZE;
+        int hashValue = 0;
+        char[] letters = key.toCharArray();
+        for (int i = 0; i < letters.length; i++) {
+            hashValue += letters[i];
+        }
+        hashValue = (hashValue * 599) % INITIAL_SIZE;
+        return hashValue;
     }
 
 }
