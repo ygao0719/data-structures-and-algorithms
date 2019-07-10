@@ -135,6 +135,6 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 ![White Board to fizzbuzztree](../assets/fizzbuzztree.jpg)
 ![White board to breathFirst](../assets/breathfirst.jpg)
 ![White board to findMaximumValue](../assets/findMaximumValue.jpg)
-
+![white board to duplicated Word](../assets/duplicatedWord.jpg)
 
 
