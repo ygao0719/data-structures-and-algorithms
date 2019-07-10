@@ -40,7 +40,8 @@ should return a boolean representing whether or not the brackets in the string a
   - If the value is divisible by 3 and 5, replace the value with “FizzBuzz”
 
 20. Hashtable: Implement a Hashtable with the following methods: add, get, contains, hash.
-
+21. DuplicatedWord: Write a function that accepts a lengthy string parameter,return the first word to occur more than 
+once in that provided string
 
 
 
@@ -104,6 +105,9 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Approach: hashtable is an array with HashEntry class which has next to deal with collision.
 - Big O time is O(1)
 
+24. Duplicated Word: 
+- Approach: use hashset to find the duplicated word. 
+- Big O time is O(n), space is O(n)
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -119,6 +123,7 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Binary search tree: add(), contains() [code](./src/main/java/tree/BinarySearchTree.java)
 - FizzBuzzTree [code](./src/main/java/fizzBuzzTree/FizzBuzzTree.java)
 - Hashtable [code](./src/main/java/hashtable/Hashtable.java)
+- Duplicated Word [code](./src/main/java/repeatedWord/RepeatedWord.java)
 
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
@@ -130,5 +135,6 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 ![White Board to fizzbuzztree](../assets/fizzbuzztree.jpg)
 ![White board to breathFirst](../assets/breathfirst.jpg)
 ![White board to findMaximumValue](../assets/findMaximumValue.jpg)
+![white board to duplicated Word](../assets/duplicatedWord.jpg)
 
 
