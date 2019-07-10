@@ -26,3 +26,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 
 ## Week 6
 - [8 July: Hashtable](./Data-Structures/README.md)
+- [9 July: DuplicatedWord](./Data-Structures/README.md)
