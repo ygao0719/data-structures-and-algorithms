@@ -30,3 +30,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 
 ## Week 6
 - [8 July: Hashtable](./401-code-challenges/Data-Structures/README.md)
+- [9 July: DuplicatedWord](./401-code-challenges/Data-Structures/README.md)
