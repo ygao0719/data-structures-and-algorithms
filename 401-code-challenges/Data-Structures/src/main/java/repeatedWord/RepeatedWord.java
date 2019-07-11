@@ -1,8 +1,5 @@
 package repeatedWord;
 
-
-import hashtable.Hashtable;
-
 import java.util.HashSet;
 import java.util.Set;
 
