@@ -1,7 +1,7 @@
 # Data Struture
 <!-- Short summary or background information -->
 Some methods for single linked list, stack, queue and tree.
-HashTable
+HashTable, Repeated word, Tree Intersection.
 ## Challenge
 <!-- Description of the challenge -->
 1. Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -42,6 +42,8 @@ should return a boolean representing whether or not the brackets in the string a
 20. Hashtable: Implement a Hashtable with the following methods: add, get, contains, hash.
 21. DuplicatedWord: Write a function that accepts a lengthy string parameter,return the first word to occur more than 
 once in that provided string
+22. Tree Intersection: Write a function called tree_intersection that takes two binary tree parameters.
+return a set of values found in both trees.
 
 
 
@@ -109,6 +111,13 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Approach: use hashset to find the duplicated word. 
 - Big O time is O(n), space is O(n)
 
+25. Tree Intersection:
+- Approach: Do inorder traversal of first tree and store the traversal in a list list1[]. 
+            Do inorder traversal of second tree and store the traversal in a list list2[]
+            Find intersection of list1[] and list2[] by hashset.
+- Big O time is O(n), space is O(n)
+
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - insert, includes, print, append, insertBefore, insertAfter, kthFromEnd, mergeLists
@@ -124,7 +133,7 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - FizzBuzzTree [code](./src/main/java/fizzBuzzTree/FizzBuzzTree.java)
 - Hashtable [code](./src/main/java/hashtable/Hashtable.java)
 - Duplicated Word [code](./src/main/java/repeatedWord/RepeatedWord.java)
-
+- Tree Intersection [code](./src/main/java/TreeIntersection/TreeIntersection.java)
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
 ![White Board to kthFromEnd](../assets/linkedlist_kthFromEnd.jpg)
@@ -136,5 +145,6 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 ![White board to breathFirst](../assets/breathfirst.jpg)
 ![White board to findMaximumValue](../assets/findMaximumValue.jpg)
 ![white board to duplicated Word](../assets/duplicatedWord.jpg)
+![white board to tree intersection](../assets/treeIntersection.jpg)
 
 
