@@ -84,7 +84,6 @@ public class GraphTest {
         test.addEdge(a,c);
 
         assertEquals(1,test.getNeighbors(a).iterator().next().weight);
-
     }
 
     //The proper size is returned, representing the number of nodes in the graph
