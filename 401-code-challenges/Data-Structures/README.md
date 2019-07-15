@@ -45,7 +45,12 @@ once in that provided string
 22. Tree Intersection: Write a function called tree_intersection that takes two binary tree parameters.
 return a set of values found in both trees.
 23.  LEFT JOINs two hashmaps into a single data structure.
-
+24. Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
+- AddNode()
+- AddEdge()
+- GetNodes()
+- GetNeighbors()
+- Size()
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -121,6 +126,9 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Approach: get the left hashmap's key and store key, value and right hashmap's value in a 2D array.
 - Big O time is O(n), space is O(n).
 
+27. Graph
+
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - insert, includes, print, append, insertBefore, insertAfter, kthFromEnd, mergeLists
@@ -138,6 +146,7 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Duplicated Word [code](./src/main/java/repeatedWord/RepeatedWord.java)
 - Tree Intersection [code](./src/main/java/TreeIntersection/TreeIntersection.java)
 - LeftJoin[code](./src/main/java/Leftjoin/LeftJoin.java)
+- Graph[code](./src/main/java/graph/Graph.java)
 
 
 
