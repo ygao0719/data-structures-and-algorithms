@@ -1,7 +1,7 @@
 # Data Struture
 <!-- Short summary or background information -->
-Some methods for single linked list, stack, queue and tree.
-HashTable, Repeated word, Tree Intersection.
+Some methods for single linked list, stack, queue, tree.
+HashTable, Repeated word, Tree Intersection, LeftJoin.
 ## Challenge
 <!-- Description of the challenge -->
 1. Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -44,7 +44,7 @@ should return a boolean representing whether or not the brackets in the string a
 once in that provided string
 22. Tree Intersection: Write a function called tree_intersection that takes two binary tree parameters.
 return a set of values found in both trees.
-
+23.  LEFT JOINs two hashmaps into a single data structure.
 
 
 ## Approach & Efficiency
@@ -117,6 +117,9 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
             Find intersection of list1[] and list2[] by hashset.
 - Big O time is O(n), space is O(n)
 
+26. LeftJoin:
+- Approach: get the left hashmap's key and store key, value and right hashmap's value in a 2D array.
+- Big O time is O(n), space is O(n).
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -134,6 +137,10 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Hashtable [code](./src/main/java/hashtable/Hashtable.java)
 - Duplicated Word [code](./src/main/java/repeatedWord/RepeatedWord.java)
 - Tree Intersection [code](./src/main/java/TreeIntersection/TreeIntersection.java)
+- LeftJoin[code](./src/main/java/Leftjoin/LeftJoin.java)
+
+
+
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
 ![White Board to kthFromEnd](../assets/linkedlist_kthFromEnd.jpg)
@@ -146,5 +153,6 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 ![White board to findMaximumValue](../assets/findMaximumValue.jpg)
 ![white board to duplicated Word](../assets/duplicatedWord.jpg)
 ![white board to tree intersection](../assets/treeIntersection.jpg)
+![white board to leftJoin](../assets/leftJoin.jpg)
 
 
