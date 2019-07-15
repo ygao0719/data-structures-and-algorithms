@@ -1,7 +1,6 @@
 package Leftjoin;
 
 import java.util.HashMap;
-import java.util.Hashtable;
 
 public class LeftJoin {
     public static String[][] leftjoin(HashMap<String,String> map1, HashMap<String,String> map2){
