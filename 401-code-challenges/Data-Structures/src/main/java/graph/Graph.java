@@ -31,7 +31,11 @@ public class Graph {
     }
 
     public Set<Node> getNodes(){
-        return nodes;
+        if (nodes.isEmpty()){
+            return null;
+        }else {
+            return nodes;
+        }
     }
 
     public Set<Edge> getNeighbors(Node inputNode){
