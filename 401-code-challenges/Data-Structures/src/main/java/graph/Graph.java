@@ -50,4 +50,30 @@ public class Graph {
         return nodes.size();
     }
 
+    public List<Integer> BFS(Node node){
+        List<Integer> order = new ArrayList<>();
+        boolean visited[] = new boolean[nodes.size()];
+
+        LinkedList<Node> queue = new LinkedList<>();
+
+        visited[node.value] = true;
+        queue.add(node);
+
+        while(queue.size() != 0){
+            Node front = queue.poll();
+            order.add(front.value);
+
+            Iterator<Edge> it = adjList.get(front).iterator();
+            while(it.hasNext()){
+                Node n = it.next().destination;
+                if (!visited[n.value]){
+                    visited[n.value] = true;
+                    queue.add(n);
+                }
+            }
+        }
+
+        return order;
+    }
+
 }

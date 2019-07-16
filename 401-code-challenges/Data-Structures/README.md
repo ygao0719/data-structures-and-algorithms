@@ -1,7 +1,7 @@
 # Data Struture
 <!-- Short summary or background information -->
 Some methods for single linked list, stack, queue, tree.
-HashTable, Repeated word, Tree Intersection, LeftJoin, graph
+HashTable, Repeated word, Tree Intersection, LeftJoin, graph, graph breadth first search.
 ## Challenge
 <!-- Description of the challenge -->
 1. Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -44,13 +44,18 @@ should return a boolean representing whether or not the brackets in the string a
 once in that provided string
 22. Tree Intersection: Write a function called tree_intersection that takes two binary tree parameters.
 return a set of values found in both trees.
-23.  LEFT JOINs two hashmaps into a single data structure.
+23. LEFT JOINs two hashmaps into a single data structure.
 24. Implement your own Graph. The graph should be represented as an adjacency list, and should include the following methods:
 - AddNode()
 - AddEdge()
 - GetNodes()
 - GetNeighbors()
 - Size()
+25. a breadth-first traversal method that accepts a starting node.
+return a collection of nodes in the order they were visited. Display the collection.
+
+
+
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -81,7 +86,7 @@ for dogs. When I wanted to add a cat, it goes into the queue and dog likewise. T
 18. AnimalShelter.dequeue(): 
 - Approach: dequeue dog queue or cat queue according to user's input
 - Big O time is O(1), space is O(1). 
-19. MultiBracketValidation90: 
+19. MultiBracketValidation(): 
 - Approach: create a stack to push open brackets into the stack, then 
 if the corresponding closing bracket matches pop the open bracket off the stack. Then check if stack is empty return true otherwise false for unbalanced bracket string.
 - Big O time is O(n), space is O(n).
@@ -127,7 +132,12 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Big O time is O(n), space is O(n).
 
 27. Graph
-
+28. Graph breadth first search: 
+- Approach: 1. Enqueue the declared start node into the Queue.
+            2. Create a loop that will run while the node still has nodes present.
+            3. Dequeue the first node from the queue
+            4. if the Dequeue‘d node has unvisited child nodes, mark the unvisited children as visited and re-insert them back into the queue.
+- Big O time is O(n), space is O(n).
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -147,7 +157,7 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Tree Intersection [code](./src/main/java/TreeIntersection/TreeIntersection.java)
 - LeftJoin[code](./src/main/java/Leftjoin/LeftJoin.java)
 - Graph[code](./src/main/java/graph/Graph.java)
-
+- Graph Breadth first search[code](./src/main/java/graph/Graph.java)
 
 
 ## White Board
@@ -163,5 +173,6 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 ![white board to duplicated Word](../assets/duplicatedWord.jpg)
 ![white board to tree intersection](../assets/treeIntersection.jpg)
 ![white board to leftJoin](../assets/leftJoin.jpg)
+![white board to graph breadth first search](../assets/BFS.jpg)
 
 
