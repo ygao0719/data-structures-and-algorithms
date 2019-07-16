@@ -2,10 +2,7 @@ package graph;
 
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 import static org.junit.Assert.*;
 
@@ -114,4 +111,51 @@ public class GraphTest {
         assertEquals(0,test.size());
         assertNull(test.getNodes());
     }
+
+    //Happy path
+    @Test
+    public void test_BFS(){
+        Graph test = new Graph();
+        Node a = test.addNode(2);
+        Node b = test.addNode(0);
+        Node c = test.addNode(3);
+        Node d = test.addNode(1);
+        test.addEdge(a,b);
+        test.addEdge(b,a);
+        test.addEdge(a,c);
+        test.addEdge(c,a);
+        test.addEdge(a,d);
+        test.addEdge(d,a);
+        test.addEdge(b,d);
+        test.addEdge(d,b);
+
+        List<Integer> expect = new ArrayList<>(Arrays.asList(2,3,1,0));
+        assertEquals(expect,test.BFS(a));
+    }
+
+    //test if graph only have one node
+    @Test
+    public void test_oneNode() {
+
+        Graph test = new Graph();
+        Node a = test.addNode(0);
+
+        test.addEdge(a,a);
+        List<Integer> expect = new ArrayList<>(Arrays.asList(0));
+        assertEquals(expect, test.BFS(a));
+    }
+
+
+    //test if graph has nodes but no edges
+    @Test(expected = NullPointerException.class)
+    public void get_nodes(){
+        Graph test = new Graph();
+        Node a = test.addNode(2);
+        Node b = test.addNode(0);
+        Node c = test.addNode(3);
+        Node d = test.addNode(1);
+
+        assertEquals("", test.BFS(a));
+    }
+
 }
