@@ -28,3 +28,7 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 - [8 July: Hashtable](./Data-Structures/README.md)
 - [9 July: DuplicatedWord](./Data-Structures/README.md)
 - [10 July: TreeIntersection](./Data-Structures/README.md)
+
+## Week 7
+- [14 July: Left Join](./Data-Structures/README.md)
+- [15 July: Graph](./Data-Structures/README.md)
