@@ -86,7 +86,7 @@ for dogs. When I wanted to add a cat, it goes into the queue and dog likewise. T
 18. AnimalShelter.dequeue(): 
 - Approach: dequeue dog queue or cat queue according to user's input
 - Big O time is O(1), space is O(1). 
-19. MultiBracketValidation90: 
+19. MultiBracketValidation(): 
 - Approach: create a stack to push open brackets into the stack, then 
 if the corresponding closing bracket matches pop the open bracket off the stack. Then check if stack is empty return true otherwise false for unbalanced bracket string.
 - Big O time is O(n), space is O(n).
