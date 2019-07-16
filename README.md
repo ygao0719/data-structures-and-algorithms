@@ -35,4 +35,4 @@ This repo contains my practice and adventures in Data Structures and Algorithms.
 
 ## Week 7
 - [14 July: Left Join](./401-code-challenges/Data-Structures/README.md)
-- [14 July: Graph](./401-code-challenges/Data-Structures/README.md)
+- [15 July: Graph](./401-code-challenges/Data-Structures/README.md)
