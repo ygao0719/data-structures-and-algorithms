@@ -70,7 +70,6 @@ public class Graph {
                     visited[n.value] = true;
                     queue.add(n);
                 }
-
             }
         }
 
