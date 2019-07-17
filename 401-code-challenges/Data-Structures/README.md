@@ -1,7 +1,7 @@
 # Data Struture
 <!-- Short summary or background information -->
 Some methods for single linked list, stack, queue, tree.
-HashTable, Repeated word, Tree Intersection, LeftJoin, graph, graph breadth first search.
+HashTable, Repeated word, Tree Intersection, LeftJoin, graph, graph breadth first search, getEdge
 ## Challenge
 <!-- Description of the challenge -->
 1. Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -53,7 +53,8 @@ return a set of values found in both trees.
 - Size()
 25. a breadth-first traversal method that accepts a starting node.
 return a collection of nodes in the order they were visited. Display the collection.
-
+26. takes in a graph, and an array of city names. return whether the full trip is possible with direct flights, and 
+how much it would cost.
 
 
 
@@ -138,6 +139,12 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
             3. Dequeue the first node from the queue
             4. if the Dequeue‘d node has unvisited child nodes, mark the unvisited children as visited and re-insert them back into the queue.
 - Big O time is O(n), space is O(n).
+29. GetEdges: 
+- Approach: iterate over the array and check if elements next to each other are neighbors in graph.
+- Big O time is O(n), space is O(1).
+
+
+
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
@@ -158,7 +165,7 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - LeftJoin[code](./src/main/java/Leftjoin/LeftJoin.java)
 - Graph[code](./src/main/java/graph/Graph.java)
 - Graph Breadth first search[code](./src/main/java/graph/Graph.java)
-
+- GetEdge[code](./src/main/java/graph/Graph.java)
 
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
@@ -174,5 +181,6 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 ![white board to tree intersection](../assets/treeIntersection.jpg)
 ![white board to leftJoin](../assets/leftJoin.jpg)
 ![white board to graph breadth first search](../assets/BFS.jpg)
+![white board to getEdge](../assets/getEdge.jpg)
 
 

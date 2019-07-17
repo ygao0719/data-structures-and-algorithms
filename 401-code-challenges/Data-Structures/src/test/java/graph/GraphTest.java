@@ -158,4 +158,33 @@ public class GraphTest {
         assertEquals("", test.BFS(a));
     }
 
+    //test get edge
+    @Test
+    public void test_getEdge(){
+        Graph test = new Graph();
+        Node a = test.addNode(2);
+        Node b = test.addNode(0);
+        Node c = test.addNode(3);
+        Node d = test.addNode(1);
+        test.addEdge(a,b);
+        test.addEdge(b,a);
+        test.addEdge(a,c);
+        test.addEdge(c,a);
+        test.addEdge(b,d);
+        test.addEdge(d,b);
+
+        Node[] arr = {a,b,d};
+        assertEquals("true 2",test.getEdge(arr));
+    }
+
+    //only have one node in array
+    @Test(expected = IllegalArgumentException.class)
+    public void test_Array(){
+        Graph test = new Graph();
+        Node a = test.addNode(2);
+
+        Node[] arr = {a};
+        test.getEdge(arr);
+    }
+
 }
