@@ -76,4 +76,30 @@ public class Graph {
         return order;
     }
 
+    public String getEdge(Node[] arr){
+        if (arr.length > nodes.size()||arr.length < 2){
+            throw new IllegalArgumentException("wrong input");
+        }
+
+        int total = 0;
+        for (int i = 0;i < arr.length-1; i++) {
+
+            int j = i + 1;
+            Edge newEdge = new Edge(arr[i],arr[j]);
+
+            if (edges.contains(newEdge)){
+                total = total + newEdge.weight;
+            }else{
+                break;
+            }
+        }
+
+        if (total == 0){
+            return "false " + 0;
+        }else{
+            return "true " + total;
+        }
+
+    }
+
 }
