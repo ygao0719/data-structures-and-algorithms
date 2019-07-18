@@ -72,7 +72,6 @@ public class Graph {
                 }
             }
         }
-
         return order;
     }
 
@@ -99,7 +98,31 @@ public class Graph {
         }else{
             return "true " + total;
         }
+    }
 
+    public List<Integer> DFS(Node node){
+        List<Integer> order = new ArrayList<>();
+        boolean visited[] = new boolean[nodes.size()];
+
+        Stack<Node> stack = new Stack<>();
+
+        visited[node.value] = true;
+        stack.add(node);
+
+        while(stack.size() != 0){
+            Node front = stack.pop();
+            order.add(front.value);
+
+            Iterator<Edge> it = adjList.get(front).iterator();
+            while(it.hasNext()){
+                Node n = it.next().destination;
+                if (!visited[n.value]){
+                    visited[n.value] = true;
+                    stack.add(n);
+                }
+            }
+        }
+        return order;
     }
 
 }
