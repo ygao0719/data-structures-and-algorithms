@@ -2,33 +2,34 @@ package graph;
 
 import java.util.*;
 
-public class Graph {
+public class Graph<T> {
     private Set<Node> nodes;
-    private Set<Edge> edges;
-    private Map<Node,Set<Edge>> adjList;
+//    private Set<Edge> edges;
 
     public Graph(){
         nodes = new HashSet<>();
-        edges = new HashSet<>();
-        adjList = new HashMap<>();
     }
 
-    public Node addNode(int input){
+    public Node addNode(T input){
         Node newNode = new Node(input);
         nodes.add(newNode);
         return newNode;
     }
 
     public void addEdge(Node src, Node dest){
-        Edge newEdge = new Edge(src,dest);
-        edges.add(newEdge);
-
-        adjList.putIfAbsent(src, new HashSet<>());
-        adjList.putIfAbsent(dest, new HashSet<>());
-
-        adjList.get(src).add(newEdge);
-        adjList.get(dest).add(newEdge);
+        if (nodes.contains(src) && nodes.contains(dest)){
+            src.addNeighbor(dest);
+            dest.addNeighbor(src);
+        }
     }
+
+    public void addEdge(Node src, Node dest,int weight){
+        if (nodes.contains(src) && nodes.contains(dest)){
+            src.addNeighbor(dest,weight);
+            dest.addNeighbor(src,weight);
+        }
+    }
+
 
     public Set<Node> getNodes(){
         if (nodes.isEmpty()){
@@ -39,36 +40,34 @@ public class Graph {
     }
 
     public Set<Edge> getNeighbors(Node inputNode){
-        if (adjList.containsKey(inputNode)){
-            return adjList.get(inputNode);
-        }else{
-            return null;
-        }
+        return inputNode.neighbors;
     }
 
     public int size(){
         return nodes.size();
     }
 
-    public List<Integer> BFS(Node node){
-        List<Integer> order = new ArrayList<>();
-        boolean visited[] = new boolean[nodes.size()];
+    public List<Node> BFS(Node node){
+        if (node == null){
+            throw new NullPointerException("input can not be null.");
+        }
 
-        LinkedList<Node> queue = new LinkedList<>();
+        List<Node> order = new ArrayList<>();
+        Set<Node> visited = new HashSet<>();
 
-        visited[node.value] = true;
+        Queue<Node> queue = new LinkedList<>();
+
+        visited.add(node);
         queue.add(node);
 
         while(queue.size() != 0){
             Node front = queue.poll();
-            order.add(front.value);
+            order.add(front);
 
-            Iterator<Edge> it = adjList.get(front).iterator();
-            while(it.hasNext()){
-                Node n = it.next().destination;
-                if (!visited[n.value]){
-                    visited[n.value] = true;
-                    queue.add(n);
+            for(Edge neighbor :(Set<Edge>) front.neighbors){
+                if (visited.add(neighbor.node)){
+                    queue.add(neighbor.node);
+                    visited.add(neighbor.node);
                 }
             }
         }
