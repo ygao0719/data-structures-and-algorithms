@@ -99,25 +99,27 @@ public class Graph<T> {
         }
     }
 
-    public List<Integer> DFS(Node node){
-        List<Integer> order = new ArrayList<>();
-        boolean visited[] = new boolean[nodes.size()];
+    public List<Node> DFS(Node node){
+        if (node == null){
+            throw new NullPointerException("input can not be null.");
+        }
+
+        List<Node> order = new ArrayList<>();
+        Set<Node> visited = new HashSet<>();
 
         Stack<Node> stack = new Stack<>();
 
-        visited[node.value] = true;
-        stack.add(node);
+        visited.add(node);
+        stack.push(node);
 
         while(stack.size() != 0){
-            Node front = stack.pop();
-            order.add(front.value);
+            Node top = stack.pop();
+            order.add(top);
 
-            Iterator<Edge> it = adjList.get(front).iterator();
-            while(it.hasNext()){
-                Node n = it.next().destination;
-                if (!visited[n.value]){
-                    visited[n.value] = true;
-                    stack.add(n);
+            for (Edge neighbor : (HashSet<Edge>)top.neighbors){
+                if (visited.add(neighbor.node)){
+                    stack.push(neighbor.node);
+                    visited.add(neighbor.node);
                 }
             }
         }
