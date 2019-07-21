@@ -142,7 +142,9 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 29. GetEdges: 
 - Approach: iterate over the array and check if elements next to each other are neighbors in graph.
 - Big O time is O(n), space is O(1).
-
+30. Graph Depth first search:
+- Approach: similar with BFS. use stack instead of queue.
+- Big O time is O(n), space is O(n)
 
 
 
@@ -166,6 +168,8 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 - Graph[code](./src/main/java/graph/Graph.java)
 - Graph Breadth first search[code](./src/main/java/graph/Graph.java)
 - GetEdge[code](./src/main/java/graph/Graph.java)
+- Graph Depth first search[code](./src/main/java/graph/Graph.java)
+
 
 ## White Board
 ![White Board to insert shift array problem](../assets/linkedList.jpg)
@@ -182,5 +186,6 @@ if the corresponding closing bracket matches pop the open bracket off the stack.
 ![white board to leftJoin](../assets/leftJoin.jpg)
 ![white board to graph breadth first search](../assets/BFS.jpg)
 ![white board to getEdge](../assets/getEdge.jpg)
+![white board to graph depth first search](../assets/DFS.jpg)
 
 

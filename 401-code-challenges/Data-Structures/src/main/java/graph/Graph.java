@@ -47,6 +47,7 @@ public class Graph<T> {
         return nodes.size();
     }
 
+    //BFS***************************************************************
     public List<Node> BFS(Node node){
         if (node == null){
             throw new NullPointerException("input can not be null.");
@@ -74,19 +75,20 @@ public class Graph<T> {
         return order;
     }
 
-    public String getEdge(Node[] arr){
-        if (arr.length > nodes.size()||arr.length < 2){
+    //getEdge city direct path ***************************************************************
+    public String getEdge(Graph g, String[] cities){
+        if (cities.length > nodes.size()||cities.length < 2){
             throw new IllegalArgumentException("wrong input");
         }
 
         int total = 0;
-        for (int i = 0;i < arr.length-1; i++) {
-
+        for (int i = 0;i < cities.length-1; i++) {
             int j = i + 1;
-            Edge newEdge = new Edge(arr[i],arr[j]);
+            Node next = g.getPresentNode(cities[j]);
+            Node current = g.getPresentNode(cities[i]);
 
-            if (edges.contains(newEdge)){
-                total = total + newEdge.weight;
+            if (current.neighbors.contains(next)){
+                total = total + current.getCost(next);
             }else{
                 break;
             }
@@ -99,6 +101,17 @@ public class Graph<T> {
         }
     }
 
+    //helper function for getEdge Function
+    public Node getPresentNode(T value){
+        for(Node node : nodes){
+            if (node.value == value){
+                return node;
+            }
+        }
+        return null;
+    }
+
+    //DFS ****************************************************************
     public List<Node> DFS(Node node){
         if (node == null){
             throw new NullPointerException("input can not be null.");
