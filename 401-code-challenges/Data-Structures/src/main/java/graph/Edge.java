@@ -1,35 +1,32 @@
 package graph;
 
-public class Edge {
-    private static final int DEFAULT_WEIGHT = 1;
-    Node source;
-    Node destination;
+public class Edge<T> {
     int weight;
+    Node<T> node;
 
-    Edge(Node source, Node destination){
-        this(source,destination,DEFAULT_WEIGHT);
-    }
-    Edge(Node src, Node dest, int weig){
-        this.source = src;
-        this.destination = dest;
-        this.weight = weig;
+    Edge(Node<T> node){
+        this.node = node;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof Edge)) return false;
-
-        Edge _obj = (Edge) obj;
-        return _obj.source.equals(source) && _obj.destination.equals(destination) &&
-                _obj.weight == weight;
+    Edge(Node<T> node, int weight){
+        this.node = node;
+        this.weight = weight;
     }
 
-    @Override
-    public int hashCode() {
-        int result = source.hashCode();
-        result = 31 * result + destination.hashCode();
-        result = 31 * result + weight;
-        return result;
+    public Node<T> getNode(){
+        return this.node;
+    }
+
+    public void setNode(Node<T> node){
+        this.node = node;
+    }
+
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public int getWeight() {
+        return weight;
     }
 }

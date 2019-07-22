@@ -2,33 +2,39 @@ package graph;
 
 import java.util.*;
 
-public class Graph {
+public class Graph<T> {
     private Set<Node> nodes;
-    private Set<Edge> edges;
-    private Map<Node,Set<Edge>> adjList;
+//    private Set<Edge> edges;
 
     public Graph(){
         nodes = new HashSet<>();
-        edges = new HashSet<>();
-        adjList = new HashMap<>();
     }
 
-    public Node addNode(int input){
+    public Node addNode(T input){
         Node newNode = new Node(input);
         nodes.add(newNode);
         return newNode;
     }
 
-    public void addEdge(Node src, Node dest){
-        Edge newEdge = new Edge(src,dest);
-        edges.add(newEdge);
-
-        adjList.putIfAbsent(src, new HashSet<>());
-        adjList.putIfAbsent(dest, new HashSet<>());
-
-        adjList.get(src).add(newEdge);
-        adjList.get(dest).add(newEdge);
+    public boolean addEdge(Node src, Node dest){
+        if (nodes.contains(src) && nodes.contains(dest)){
+            src.addNeighbor(dest);
+            dest.addNeighbor(src);
+            return true;
+        }
+        return false;
     }
+
+    public boolean addEdge(Node src, Node dest,int weight){
+        if (nodes.contains(src) && nodes.contains(dest)){
+            src.addNeighbor(dest,weight);
+            dest.addNeighbor(src,weight);
+            return true;
+        }
+        return false;
+
+    }
+
 
     public Set<Node> getNodes(){
         if (nodes.isEmpty()){
@@ -39,55 +45,55 @@ public class Graph {
     }
 
     public Set<Edge> getNeighbors(Node inputNode){
-        if (adjList.containsKey(inputNode)){
-            return adjList.get(inputNode);
-        }else{
-            return null;
-        }
+        return inputNode.neighbors;
     }
 
     public int size(){
         return nodes.size();
     }
 
-    public List<Integer> BFS(Node node){
-        List<Integer> order = new ArrayList<>();
-        boolean visited[] = new boolean[nodes.size()];
+    //BFS***************************************************************
+    public List<Node> BFS(Node node){
+        if (node == null){
+            throw new NullPointerException("input can not be null.");
+        }
 
-        LinkedList<Node> queue = new LinkedList<>();
+        List<Node> order = new ArrayList<>();
+        Set<Node> visited = new HashSet<>();
 
-        visited[node.value] = true;
+        Queue<Node> queue = new LinkedList<>();
+
+        visited.add(node);
         queue.add(node);
 
         while(queue.size() != 0){
             Node front = queue.poll();
-            order.add(front.value);
+            order.add(front);
 
-            Iterator<Edge> it = adjList.get(front).iterator();
-            while(it.hasNext()){
-                Node n = it.next().destination;
-                if (!visited[n.value]){
-                    visited[n.value] = true;
-                    queue.add(n);
+            for(Edge neighbor :(Set<Edge>) front.neighbors){
+                if (visited.add(neighbor.node)){
+                    queue.add(neighbor.node);
+                    visited.add(neighbor.node);
                 }
             }
         }
         return order;
     }
 
-    public String getEdge(Node[] arr){
-        if (arr.length > nodes.size()||arr.length < 2){
+    //getEdge city direct path ***************************************************************
+    public String getEdge(Graph g, String[] cities){
+        if (cities.length > nodes.size()||cities.length < 2){
             throw new IllegalArgumentException("wrong input");
         }
 
         int total = 0;
-        for (int i = 0;i < arr.length-1; i++) {
-
+        for (int i = 0;i < cities.length-1; i++) {
             int j = i + 1;
-            Edge newEdge = new Edge(arr[i],arr[j]);
+            Node next = g.getPresentNode(cities[j]);
+            Node current = g.getPresentNode(cities[i]);
 
-            if (edges.contains(newEdge)){
-                total = total + newEdge.weight;
+            if (current.neighbors.contains(next)){
+                total = total + current.getCost(next);
             }else{
                 break;
             }
@@ -100,29 +106,51 @@ public class Graph {
         }
     }
 
-    public List<Integer> DFS(Node node){
-        List<Integer> order = new ArrayList<>();
-        boolean visited[] = new boolean[nodes.size()];
+    //helper function for getEdge Function
+    public Node getPresentNode(T value){
+        for(Node node : nodes){
+            if (node.value == value){
+                return node;
+            }
+        }
+        return null;
+    }
+
+    //DFS ****************************************************************
+    public List<Node> DFS(Node node){
+        if (node == null){
+            throw new NullPointerException("input can not be null.");
+        }
+
+        List<Node> order = new ArrayList<>();
+        Set<Node> visited = new HashSet<>();
 
         Stack<Node> stack = new Stack<>();
 
-        visited[node.value] = true;
-        stack.add(node);
+        visited.add(node);
+        stack.push(node);
 
         while(stack.size() != 0){
-            Node front = stack.pop();
-            order.add(front.value);
+            Node top = stack.pop();
+            order.add(top);
 
-            Iterator<Edge> it = adjList.get(front).iterator();
-            while(it.hasNext()){
-                Node n = it.next().destination;
-                if (!visited[n.value]){
-                    visited[n.value] = true;
-                    stack.add(n);
+            for (Edge neighbor : (HashSet<Edge>)top.neighbors){
+                if (visited.add(neighbor.node)){
+                    stack.push(neighbor.node);
+                    visited.add(neighbor.node);
                 }
             }
         }
         return order;
     }
 
+    public static void main(String[] args) {
+        Graph graph = new Graph();
+        Node cat = graph.addNode("cat");
+        Node dog = graph.addNode("dog");
+
+        graph.addEdge(cat,dog);
+
+        System.out.println(graph.getNeighbors(cat).contains(dog));
+    }
 }

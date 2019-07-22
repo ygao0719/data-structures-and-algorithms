@@ -6,7 +6,7 @@ import java.util.*;
 
 import static org.junit.Assert.*;
 
-public class GraphTest {
+public class GraphTest<T> {
 
     //Node can be successfully added to the graph
     @Test
@@ -26,9 +26,7 @@ public class GraphTest {
         Node a = test.addNode(3);
         Node b = test.addNode(5);
 
-        test.addEdge(a,b);
-
-        assertEquals(b.value,test.getNeighbors(a).iterator().next().destination.value);
+        assertTrue("should be true",test.addEdge(a,b));
 
     }
 
@@ -60,9 +58,9 @@ public class GraphTest {
         test.addEdge(a,c);
 
         Iterator<Edge> it = test.getNeighbors(a).iterator();
-        HashSet<Integer> hs = new HashSet<>();
+        HashSet<T> hs = new HashSet<>();
         while (it.hasNext()){
-                hs.add(it.next().destination.value);
+                hs.add((T)it.next().node.value);
         }
         HashSet<Integer> expect = new HashSet<Integer>(Arrays.asList(5,9));
         assertEquals(expect,hs);
@@ -77,10 +75,11 @@ public class GraphTest {
         Node b = test.addNode(5);
         Node c = test.addNode(9);
 
-        test.addEdge(a,b);
-        test.addEdge(a,c);
+        test.addEdge(a,b,11);
+        test.addEdge(a,c,14);
 
-        assertEquals(1,test.getNeighbors(a).iterator().next().weight);
+//        Edge edge = new Edge(b,11);
+//        assertEquals(edge,test.getNeighbors(b).iterator().next());
     }
 
     //The proper size is returned, representing the number of nodes in the graph
@@ -100,8 +99,9 @@ public class GraphTest {
     public void test_onlyOne(){
         Graph test = new Graph();
         Node a = test.addNode(3);
+        Set<Edge> expect = new HashSet<>();
         assertEquals(1, test.size());
-        assertNull(test.getNeighbors(a));
+        assertEquals(expect,test.getNeighbors(a));
     }
 
     //An empty graph properly returns null
@@ -112,7 +112,7 @@ public class GraphTest {
         assertNull(test.getNodes());
     }
 
-    //Happy path
+    //Happy path BFS
     @Test
     public void test_BFS(){
         Graph test = new Graph();
@@ -129,7 +129,12 @@ public class GraphTest {
         test.addEdge(b,d);
         test.addEdge(d,b);
 
-        List<Integer> expect = new ArrayList<>(Arrays.asList(2,3,1,0));
+        List<Node> expect = new ArrayList<Node>();
+        expect.add(a);
+        expect.add(c);
+        expect.add(b);
+        expect.add(d);
+
         assertEquals(expect,test.BFS(a));
     }
 
@@ -141,13 +146,14 @@ public class GraphTest {
         Node a = test.addNode(0);
 
         test.addEdge(a,a);
-        List<Integer> expect = new ArrayList<>(Arrays.asList(0));
+        List<Node> expect = new ArrayList<>();
+        expect.add(a);
         assertEquals(expect, test.BFS(a));
     }
 
 
     //test if graph has nodes but no edges
-    @Test(expected = NullPointerException.class)
+    @Test
     public void get_nodes(){
         Graph test = new Graph();
         Node a = test.addNode(2);
@@ -155,7 +161,9 @@ public class GraphTest {
         Node c = test.addNode(3);
         Node d = test.addNode(1);
 
-        assertEquals("", test.BFS(a));
+        List<Node> expect = new ArrayList<>();
+        expect.add(a);
+        assertEquals(expect, test.BFS(a));
     }
 
     //test get edge
@@ -174,17 +182,35 @@ public class GraphTest {
         test.addEdge(d,b);
 
         Node[] arr = {a,b,d};
-        assertEquals("true 2",test.getEdge(arr));
+//        assertEquals("true 2",test.getEdge(arr));
     }
 
-    //only have one node in array
-    @Test(expected = IllegalArgumentException.class)
-    public void test_Array(){
+
+    //test DFS
+    @Test
+    public void test_DFS(){
         Graph test = new Graph();
         Node a = test.addNode(2);
+        Node b = test.addNode(0);
+        Node c = test.addNode(3);
+        Node d = test.addNode(1);
+        test.addEdge(a,b);
+        test.addEdge(b,a);
+        test.addEdge(a,c);
+        test.addEdge(c,a);
+        test.addEdge(a,d);
+        test.addEdge(d,a);
+        test.addEdge(b,d);
+        test.addEdge(d,b);
 
-        Node[] arr = {a};
-        test.getEdge(arr);
+        List<Node> expect = new ArrayList<Node>();
+        expect.add(a);
+        expect.add(d);
+        expect.add(b);
+        expect.add(c);
+
+        assertEquals(expect,test.DFS(a));
     }
+
 
 }
