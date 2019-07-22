@@ -16,18 +16,23 @@ public class Graph<T> {
         return newNode;
     }
 
-    public void addEdge(Node src, Node dest){
+    public boolean addEdge(Node src, Node dest){
         if (nodes.contains(src) && nodes.contains(dest)){
             src.addNeighbor(dest);
             dest.addNeighbor(src);
+            return true;
         }
+        return false;
     }
 
-    public void addEdge(Node src, Node dest,int weight){
+    public boolean addEdge(Node src, Node dest,int weight){
         if (nodes.contains(src) && nodes.contains(dest)){
             src.addNeighbor(dest,weight);
             dest.addNeighbor(src,weight);
+            return true;
         }
+        return false;
+
     }
 
 
@@ -139,4 +144,13 @@ public class Graph<T> {
         return order;
     }
 
+    public static void main(String[] args) {
+        Graph graph = new Graph();
+        Node cat = graph.addNode("cat");
+        Node dog = graph.addNode("dog");
+
+        graph.addEdge(cat,dog);
+
+        System.out.println(graph.getNeighbors(cat).contains(dog));
+    }
 }

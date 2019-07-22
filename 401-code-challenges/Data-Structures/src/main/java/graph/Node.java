@@ -1,10 +1,11 @@
 package graph;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class Node<T> {
     T value;
-    HashSet<Edge> neighbors;
+    public Set<Edge> neighbors;
 
     Node(T val){
         this.value = val;
