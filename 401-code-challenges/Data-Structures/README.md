@@ -1,7 +1,7 @@
 # Data Struture
 <!-- Short summary or background information -->
 Some methods for single linked list, stack, queue, tree.
-HashTable, Repeated word, Tree Intersection, LeftJoin, graph, graph breadth first search, getEdge
+HashTable, Repeated word, Tree Intersection, LeftJoin, graph, graph breadth first search, getEdge, graph depth first search
 ## Challenge
 <!-- Description of the challenge -->
 1. Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -55,7 +55,7 @@ return a set of values found in both trees.
 return a collection of nodes in the order they were visited. Display the collection.
 26. takes in a graph, and an array of city names. return whether the full trip is possible with direct flights, and 
 how much it would cost.
-
+26. 
 
 
 ## Approach & Efficiency
