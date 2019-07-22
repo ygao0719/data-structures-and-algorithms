@@ -55,7 +55,8 @@ return a set of values found in both trees.
 return a collection of nodes in the order they were visited. Display the collection.
 26. takes in a graph, and an array of city names. return whether the full trip is possible with direct flights, and 
 how much it would cost.
-26. 
+26. Graph depth first search: a function that accepts an adjacency list as a graph, and conducts a depth first traversal.
+return a collection of nodes in their pre-order depth-first traversal order.
 
 
 ## Approach & Efficiency
